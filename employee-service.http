@@ -1,0 +1,22 @@
+### Добавление сотрудников из файа в БД
+POST http://localhost:8080/employees/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+
+--WebAppBoundary
+Content-Disposition: form-data; name="employees"; filename="employees.json"
+Content-Type: application/json
+
+< ./employees.json
+--WebAppBoundary--
+### Редактирование сотрудника с указанным id
+PUT http://localhost:8080/employee/update/1
+#Authorization: Basic YWRtaW46MTIzNA==
+Content-Type: application/json
+#[
+{
+"id" : 1,
+    "name" : "Aynur",
+    "salary" : 250000
+}
+#]
