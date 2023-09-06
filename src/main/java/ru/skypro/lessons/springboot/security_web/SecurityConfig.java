@@ -20,10 +20,9 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig {
-    @Autowired
     // Внедряем зависимость UserDetailsService
     // для работы с данными пользователя.
-    private UserDetailsService userDetailsService;
+    private final UserDetailsService userDetailsService;
 
     @Bean
     // Создаем экземпляр PasswordEncoder для шифрования паролей.

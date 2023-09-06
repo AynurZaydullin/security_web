@@ -11,7 +11,7 @@ import ru.skypro.lessons.springboot.security_web.repository.UserRepository;
 @AllArgsConstructor
 public class SecurityUserDetailsService implements UserDetailsService{
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         AuthUser user = userRepository.findByUsername(username);

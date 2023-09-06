@@ -9,13 +9,13 @@ import java.util.List;
 
 public class SecurityUserPrincipal implements UserDetails {
     private AuthUser user;
-    private List<SecurityGrantedAuthorities> authoritiesList;
+    private List<SimpleGrantedAuthority> authoritiesList;
 
     public SecurityUserPrincipal(AuthUser user) {
         this.user = user;
         this.authoritiesList = user.getAuthorityList()
                 .stream()
-                .map(SecurityGrantedAuthorities::new)
+                .map(SimpleGrantedAuthority::new)
                 .toList();
     }
 

@@ -15,6 +15,6 @@ public class EmployeeExceptionHandler {
     }
     @ExceptionHandler(InternalServerError.class)
     public ResponseEntity<?> internalServerError() {
-        return ResponseEntity.badRequest().build();
+        return ResponseEntity.internalServerError().build();
     }
 }
