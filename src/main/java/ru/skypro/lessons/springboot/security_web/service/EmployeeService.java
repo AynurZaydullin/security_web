@@ -3,6 +3,8 @@ package ru.skypro.lessons.springboot.security_web.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
@@ -83,7 +85,6 @@ public class EmployeeService {
         );
     }
     public List<Employee> getAllEmployees() {
-
         return employeeRepository.getAllEmployees();
     }
     public void deleteEmployee(long id) {
