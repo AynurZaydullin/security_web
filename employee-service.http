@@ -13,10 +13,11 @@ Content-Type: application/json
 PUT http://localhost:8080/employee/update/1
 #Authorization: Basic YWRtaW46MTIzNA==
 Content-Type: application/json
-#[
 {
 "id" : 1,
     "name" : "Aynur",
     "salary" : 250000
 }
-#]
+
+### Получение конфигурации преложения
+GET http://localhost:8080/appInfo

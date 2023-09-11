@@ -15,7 +15,7 @@ import ru.skypro.lessons.springboot.security_web.service.EmployeeService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/employees")
+@RequestMapping("/employee")
 public class EmployeeController {
     private final EmployeeService employeeService;
 
