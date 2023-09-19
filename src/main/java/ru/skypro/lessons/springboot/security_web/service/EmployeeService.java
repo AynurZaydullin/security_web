@@ -28,6 +28,7 @@ public class EmployeeService {
     private final EmployeeRepository employeeRepository;
     private final ReportRepository reportRepository;
     private final ObjectMapper objectMapper;
+    private static final Logger logger = LoggerFactory.getLogger(EmployeeService.class);
 
     public EmployeeService(EmployeeRepository employeeRepository, ReportRepository reportRepository, ObjectMapper objectMapper) {
         this.employeeRepository = employeeRepository;
@@ -36,17 +37,19 @@ public class EmployeeService {
     }
 
     public void createBatchEmployees(List<EmployeeDTO> employees) {
+        logger.info("Was invoked method: \"createBatchEmployees (save list of employeeDTOs into data base).\"");
         employees.stream()
                 .map(EmployeeDTO::toEmployee)
                 .forEach(employeeRepository::save);
     }
     public String buildReport() throws JsonProcessingException {
+        logger.info("Was invoked method: \"buildReport (build Report of employees in data base).\"");
         List<ReportDTO> reports = employeeRepository.buildReports();
         return objectMapper.writeValueAsString(reports);
     }
     public void addEmployees(MultipartFile employees) {
+        logger.info("Was invoked method: \"addEmployees (list of employees in data base).\"");
         ObjectMapper objectMapper = new ObjectMapper();
-
         try {
             String extension = StringUtils.getFilenameExtension(employees.getOriginalFilename());
             if (!"json".equals(extension)) {
@@ -55,7 +58,6 @@ public class EmployeeService {
             List<EmployeeDTO> employeeDTOS = objectMapper.readValue(
                     employees.getBytes(),
                     new TypeReference<>() {
-
                     }
             );
             createBatchEmployees(employeeDTOS);
@@ -67,8 +69,10 @@ public class EmployeeService {
 
     public Long createReport() {
         try {
+            logger.info("Was invoked method: \"downloadReport (Download Report of Employees).\"");
             Report report = new Report();
             report.setReport(buildReport());
+            logger.debug("The nest invoked method is: \"save (reportRepository.save(report).getId()).\"");
             return reportRepository.save(report).getId();
         } catch (JsonProcessingException e) {
             e.printStackTrace();
@@ -77,6 +81,7 @@ public class EmployeeService {
     }
 
     public Resource downloadReport(int id) {
+        logger.info("Was invoked method: \"downloadReport (Download Report of Employees).\"");
         return new ByteArrayResource(
                 reportRepository.findById(id)
                         .orElseThrow(ReportNotFoundException::new)
@@ -85,19 +90,23 @@ public class EmployeeService {
         );
     }
     public List<Employee> getAllEmployees() {
+        logger.info("Was invoked method: \"getAllEmployees (get list of employees).\"");
         return employeeRepository.getAllEmployees();
     }
     public void deleteEmployee(long id) {
+        logger.info("Was invoked method: \"deleteEmployee.\"");
         employeeRepository.deleteById(id);
     }
     public void updateEmployee( long id, Employee newEmployee) {
         try {
+            logger.info("Was invoked method: \"updateEmployee.\"");
             Employee oldEmployee = employeeRepository.findById(id)
                     .orElseThrow(EmployeeNotFoundException::new);
             oldEmployee.setName(newEmployee.getName());
             oldEmployee.setSalary(newEmployee.getSalary());
             employeeRepository.save(oldEmployee);
         } catch (EmployeeNotFoundException e) {
+            logger.error("There is no employee with id = " + id, e);
             throw new RuntimeException(e);
         }
     }
