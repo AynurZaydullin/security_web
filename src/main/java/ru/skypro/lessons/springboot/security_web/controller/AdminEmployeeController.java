@@ -5,10 +5,8 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
-import ru.skypro.lessons.springboot.security_web.service.Employee;
+import ru.skypro.lessons.springboot.security_web.entities.Employee;
 import ru.skypro.lessons.springboot.security_web.service.EmployeeService;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/employee")

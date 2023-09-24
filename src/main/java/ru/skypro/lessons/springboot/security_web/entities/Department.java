@@ -1,4 +1,4 @@
-package ru.skypro.lessons.springboot.security_web.service;
+package ru.skypro.lessons.springboot.security_web.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
