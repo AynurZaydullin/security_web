@@ -1,11 +1,11 @@
 databaseChangeLog:
   - include:
-      file:liquibase/changelog/changesets/01_create_employee.yml
+      file: liquibase/changesets/24092023_changeset_employee.yml
   - include:
-      file:liquibase/changelog/changesets/02_create_department.yml
+      file: liquibase/changesets/24092023_changeset_department.yml
   - include:
-      file:liquibase/changelog/changesets/03_create_auth_user.yml
+      file: liquibase/changesets/24092023_changeset_auth_user.yml
   - include:
-      file:liquibase/changelog/changesets/04_create_authority.yml
+      file: liquibase/changesets/24092023_changeset_authority.yml
   - include:
-      file:liquibase/changelog/changesets/05_create_auth_user_authority_list.yml
+      file: liquibase/changesets/24092023_changeset_auth_user_authority_list.yml

@@ -8,7 +8,7 @@ databaseChangeLog:
             columns: # колонки к данной таблице
               - column: # колонка
                   name: id # название колонки
-                  type: bigserial # тип
+                  type: bigint # тип
                   autoIncrement: true # признак автоинкремента колонки
                   constraints: # ограничения колонки
                     primaryKey: true

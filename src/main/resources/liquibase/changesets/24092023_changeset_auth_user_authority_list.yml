@@ -12,11 +12,6 @@ databaseChangeLog:
                   autoIncrement: true # признак автоинкремента колонки
                   constraints: # ограничения колонки
               - column:
-                  name: authority_list_id
-                  type: bigint # тип
-                  autoIncrement: true # признак автоинкремента колонки
-                  constraints: # ограничения колонки
-              - column:
                   name: authority_id
                   type: bigint # тип
                   autoIncrement: false # признак автоинкремента колонки

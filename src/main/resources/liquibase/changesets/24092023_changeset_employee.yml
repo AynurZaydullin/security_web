@@ -18,7 +18,12 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
+                  name: salary
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
                   name: department_id
-                  type: text
+                  type: int
                   constraints:
                     nullable: false
