@@ -12,6 +12,8 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 import ru.skypro.lessons.springboot.security_web.dto.EmployeeDTO;
 import ru.skypro.lessons.springboot.security_web.dto.ReportDTO;
+import ru.skypro.lessons.springboot.security_web.entities.Employee;
+import ru.skypro.lessons.springboot.security_web.entities.Report;
 import ru.skypro.lessons.springboot.security_web.exception.EmployeeNotFoundException;
 import ru.skypro.lessons.springboot.security_web.exception.IllegalJsonFileException;
 import ru.skypro.lessons.springboot.security_web.exception.InternalServerError;

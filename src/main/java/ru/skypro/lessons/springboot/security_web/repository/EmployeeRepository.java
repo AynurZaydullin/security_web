@@ -3,7 +3,7 @@ package ru.skypro.lessons.springboot.security_web.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import ru.skypro.lessons.springboot.security_web.dto.ReportDTO;
-import ru.skypro.lessons.springboot.security_web.service.Employee;
+import ru.skypro.lessons.springboot.security_web.entities.Employee;
 
 import java.util.List;
 

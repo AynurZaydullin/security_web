@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3 # идентификатор набора изменений
+      author: AynurZaydullin # имя разработчика, который добавил набор изменений
+      changes: # список изменений в этом наборе
+        - createTable: # команда liquibase — создает таблицу
+            tableName: auth_user # название таблицы
+            columns: # колонки к данной таблице
+              - column: # колонка
+                  name: id # название колонки
+                  type: bigint # тип
+                  autoIncrement: true # признак автоинкремента колонки
+                  constraints: # ограничения колонки
+                    primaryKey: true
+              - column:
+                  name: is_enabled
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: username
+                  type: text
+                  constraints:
+                    nullable: false

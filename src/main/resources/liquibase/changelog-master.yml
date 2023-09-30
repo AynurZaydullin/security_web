@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: liquibase/changesets/24092023_changeset_employee.yml
+  - include:
+      file: liquibase/changesets/24092023_changeset_department.yml
+  - include:
+      file: liquibase/changesets/24092023_changeset_auth_user.yml
+  - include:
+      file: liquibase/changesets/24092023_changeset_authority.yml
+  - include:
+      file: liquibase/changesets/24092023_changeset_auth_user_authority_list.yml

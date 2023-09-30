@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-import ru.skypro.lessons.springboot.security_web.service.Employee;
+import ru.skypro.lessons.springboot.security_web.entities.Employee;
 
 @NoArgsConstructor
 @AllArgsConstructor

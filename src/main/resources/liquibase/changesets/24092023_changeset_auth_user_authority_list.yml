@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5 # идентификатор набора изменений
+      author: AynurZaydullin # имя разработчика, который добавил набор изменений
+      changes: # список изменений в этом наборе
+        - createTable: # команда liquibase — создает таблицу
+            tableName: auth_user_authority_list # название таблицы
+            columns: # колонки к данной таблице
+              - column: # колонка
+                  name: auth_user_id       # название колонки
+                  type: bigint # тип
+                  autoIncrement: true # признак автоинкремента колонки
+                  constraints: # ограничения колонки
+              - column:
+                  name: authority_id
+                  type: bigint # тип
+                  autoIncrement: false # признак автоинкремента колонки
+                  constraints: # ограничения колонки
